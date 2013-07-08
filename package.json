@@ -1,0 +1,20 @@
+{
+  "name": "genji-static",
+  "description": "A static file serving middleware for genji framework.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lsm/genji-static",
+  "author": "Senmiao Liu <senmiao.liu@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsm/genji-static.git"
+  },
+  "main": "./index",
+  "dependencies": {
+    "genji": "0.7.1",
+    "mime": "1.2.9",
+    "debug": "0.7.2"
+  },
+  "engines": {
+    "node": ">= 0.8"
+  }
+}

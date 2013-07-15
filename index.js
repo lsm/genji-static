@@ -6,6 +6,7 @@ var debug = require('debug')('genji:static');
 var fs = require('fs');
 var mime = require('mime');
 var path = require('path');
+var Url = require('url');
 var genji = require('genji');
 var md5 = genji.crypto.md5;
 
@@ -96,6 +97,10 @@ function urlToPath(rootPath, url) {
   }
   url = decodeURIComponent(url);
   url = url.replace(/\0/g, '');
+  var urlObj = Url.parse(url);
+  if (urlObj && urlObj.pathname) {
+    url = urlObj.pathname;
+  }
   url = path.resolve(url);
   var filePath = path.join(rootPath, url);
   return filePath;

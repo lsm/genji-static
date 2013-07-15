@@ -141,7 +141,7 @@ function serveFile(context, filePath, etag, callback) {
     context.writeHead(200, {
       'content-type': contentType,
       'content-length': stat.size,
-      'etag': '"' + _etag + '"'
+      'etag': _etag
     });
 
     // read file only no one alter the status code

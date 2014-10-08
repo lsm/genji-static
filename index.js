@@ -38,9 +38,14 @@ module.exports = {
   attach: function (core, options) {
     var staticRoot = options.staticRoot;
     var filter = options.filter;
-    if ('string' === typeof filter) {
+    if (!filter) {
+      filter = function () {
+        return true;
+      };
+    } else if ('string' === typeof filter) {
       filter = new RegExp('^' + filter);
     }
+
     var filterFn = 'function' === typeof filter ? filter : function (url) {
       return filter.test(url);
     };
